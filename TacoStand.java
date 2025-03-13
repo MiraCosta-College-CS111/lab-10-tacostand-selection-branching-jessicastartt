@@ -2,6 +2,7 @@ public class TacoStand
 {
     /* CONSTANT VARIABLES */
 	public static final String BAR = "----------------------------------------";
+	
 
 	/* STATIC VARIABLES */
 	private static int numAsada = 0, numPollo = 0, numLengua = 0, numUltimate = 0;
@@ -71,17 +72,22 @@ public class TacoStand
 	 */
 	public static boolean orderSupplies(double budget)
 	{
-		//tacos cost 75 cents each in supplies, keeping it simple
-	    int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-	    TacoStand.totalFunds -= budget;
+		if(budget <= totalFunds){
+			int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-	    TacoStand.numAsada += tacosEach;
-	    TacoStand.numPollo += tacosEach;
-	    TacoStand.numLengua += tacosEach;
-	    TacoStand.numUltimate += tacosEach;
+			TacoStand.totalFunds -= budget;
+	
+			TacoStand.numAsada += tacosEach;
+			TacoStand.numPollo += tacosEach;
+			TacoStand.numLengua += tacosEach;
+			TacoStand.numUltimate += tacosEach;
 
-		return true;  //TODO: this is stubbed, replace this line with your actual code!
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**
@@ -91,9 +97,32 @@ public class TacoStand
 	 * @param tacoOption menu option (kind of taco)
 	 * @param numTacos number of tacos as part of order, assume > 0
 	 */
-	public static void updateTotalFunds(int tacoOption, int numTacos)
-	{
-		//TODO: this is stubbed, replace this line with your actual code!
+	public static boolean updateTotalFunds(int tacoOption, int numTacos){
+		double pricePerTaco;
+		double updateTotalFunds;
+
+		switch (tacoOption){
+			case 1:
+			    pricePerTaco = 2.50; //Carne asada
+				break;
+			case 2:
+			    pricePerTaco = 1.75; //Pollo asada
+				break;
+			case 3: 
+				pricePerTaco = 3.00; //Lengua
+				break;
+			case 4:
+				pricePerTaco = 18.00; //Ultimate
+				break;
+			default:
+			System.out.println("Invalid taco option.");
+			return false;	
+
+		updateTotalFunds = tacoOption * pricePerTaco;	
+
+		}
+
+	//TODO: this is stubbed, replace this line with your actual code!
 	}
 	
 	
