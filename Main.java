@@ -1,7 +1,7 @@
-// PARTNER NAME:
+// PARTNER NAME: Jessica Startt
 // PARTNER NAME:
 // CS111 SECTION #:
-// DATE:
+// DATE: 3/27/2025
 
 public class Main
 {
@@ -83,10 +83,10 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos){
 
-		if (numTacos == 1) {
-		    System.out.print("Here you go, buen provecho! 🌮🌮🌮");
+		if (numTacos == 3) {
+		    System.out.print("Here you go, buen provecho!\n🌮🌮🌮\n\n");
 		}  else {
-            System.out.printf("Here you go, buen provecho! 🌮🌮🌮", numTacos);
+            System.out.printf("Here you go, buen provecho!\n🌮🌮🌮🌮🌮\n\n", numTacos);
 		}	
 	}
 }
